@@ -14,6 +14,7 @@ public class ConsumerController {
 
     @Autowired
     private RestTemplate restTemplate;
+
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String add() {
         return restTemplate.getForEntity("http://eureka-producer/add?a=10&b=20", String.class).getBody();

@@ -8,6 +8,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * Created by wangshaofu on 2016/11/23.
  */
 @SpringBootApplication
+@EnableDiscoveryClient
 public class ConfigClientStart {
 
     public static void main(String[] args) {

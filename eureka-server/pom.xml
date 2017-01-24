@@ -1,5 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <parent>
+        <artifactId>springcloud</artifactId>
+        <groupId>com.wsf</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
     <modelVersion>4.0.0</modelVersion>
     <artifactId>eureka-server</artifactId>
     <packaging>jar</packaging>
@@ -12,12 +19,6 @@
         <jdk.version>1.7</jdk.version>
         <fastjson.version>1.2.21</fastjson.version>
     </properties>
-
-    <parent>
-        <artifactId>springcloud</artifactId>
-        <groupId>com.wsf</groupId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
 
     <dependencyManagement>
         <dependencies>

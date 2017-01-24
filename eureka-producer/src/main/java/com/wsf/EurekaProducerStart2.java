@@ -2,20 +2,16 @@ package com.wsf;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.config.server.EnableConfigServer;
 
 /**
  * Created by wangshaofu on 2016/11/23.
  */
 @SpringBootApplication
-@EnableConfigServer
 @EnableDiscoveryClient
-public class ConfigServerStart {
+public class EurekaProducerStart2 {
 
     public static void main(String[] args) {
-        SpringApplication.run(ConfigServerStart.class, args);
+        SpringApplication.run(EurekaProducerStart2.class, args);
     }
 }

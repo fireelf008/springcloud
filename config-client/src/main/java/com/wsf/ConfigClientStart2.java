@@ -9,9 +9,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-public class ConfigClientStart {
+public class ConfigClientStart2 {
 
     public static void main(String[] args) {
-        SpringApplication.run(ConfigClientStart.class, args);
+        SpringApplication.run(ConfigClientStart2.class, args);
     }
 }

@@ -8,9 +8,9 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>eureka-consumer</artifactId>
+    <artifactId>zuul-server</artifactId>
     <packaging>jar</packaging>
-    <name>eureka-consumer Maven Webapp</name>
+    <name>zuul-server Maven Webapp</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -42,25 +42,18 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-ribbon</artifactId>
+            <artifactId>spring-cloud-starter-zuul</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-hystrix</artifactId>
-        </dependency>
     </dependencies>
 
     <build>
-        <finalName>eureka-consumer</finalName>
+        <finalName>zuul-server</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

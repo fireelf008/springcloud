@@ -14,5 +14,6 @@
         <module>eureka-server</module>
         <module>eureka-producer</module>
         <module>eureka-consumer</module>
+        <module>zuul-server</module>
     </modules>
 </project>

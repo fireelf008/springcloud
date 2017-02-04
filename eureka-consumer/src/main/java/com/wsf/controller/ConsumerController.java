@@ -19,11 +19,11 @@ public class ConsumerController {
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     @HystrixCommand(fallbackMethod = "addFallback")
     public String add() {
-        return restTemplate.getForEntity("http://eureka-producer/add?a=10&b=20", String.class).getBody();
+        return restTemplate.getForEntity("http://zuul-server/ep/add?a=10&b=20", String.class).getBody();
     }
 
     /**
-     * 断路器，通过spring cloud hystrix
+     * 熔断器，通过spring cloud hystrix
      * @return
      */
     public String addFallback() {

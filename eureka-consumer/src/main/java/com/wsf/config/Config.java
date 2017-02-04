@@ -12,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
 public class Config {
 
     /**
-     * LoadBalanced注解使RestTemplate获得负载均衡能力
+     * LoadBalanced注解启用ribbon使RestTemplate获得负载均衡能力
      * @return
      */
     @Bean

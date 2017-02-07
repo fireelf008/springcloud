@@ -16,4 +16,9 @@
         <module>eureka-consumer</module>
         <module>zuul-server</module>
     </modules>
+
+    <build>
+        <finalName>springcloud</finalName>
+        <defaultGoal>install</defaultGoal>
+    </build>
 </project>

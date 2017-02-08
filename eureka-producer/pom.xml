@@ -48,7 +48,7 @@
     </dependencies>
 
     <build>
-        <finalName>eureka-server</finalName>
+        <finalName>eureka-producer</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

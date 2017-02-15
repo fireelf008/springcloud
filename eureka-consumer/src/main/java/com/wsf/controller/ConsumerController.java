@@ -1,4 +1,4 @@
-package com.wsf.controller;
+package com.wsf.service;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;

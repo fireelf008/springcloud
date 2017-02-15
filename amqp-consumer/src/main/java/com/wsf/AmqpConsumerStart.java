@@ -7,9 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * Created by wangshaofu on 2016/11/23.
  */
 @SpringBootApplication
-public class AmqpProducerStart {
+public class AmqpConsumerStart {
 
     public static void main(String[] args) {
-        SpringApplication.run(AmqpProducerStart.class, args);
+        SpringApplication.run(AmqpConsumerStart.class, args);
     }
 }

@@ -1,4 +1,4 @@
-package com.wsf.service;
+package com.wsf.controller;
 
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;

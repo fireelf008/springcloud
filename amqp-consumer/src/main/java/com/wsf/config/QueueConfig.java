@@ -1,9 +1,6 @@
-package com.wsf.test;
+package com.wsf.config;
 
-import org.springframework.amqp.core.Binding;
-import org.springframework.amqp.core.BindingBuilder;
-import org.springframework.amqp.core.FanoutExchange;
-import org.springframework.amqp.core.Queue;
+import org.springframework.amqp.core.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -23,35 +20,30 @@ public class QueueConfig {
         return new Queue("test", false);
     }
 
-//    @Bean
-//    public Queue testQueue() {
-//        return new Queue("test", false);
-//    }
+    @Bean
+    DirectExchange directExchange() {
+        return new DirectExchange("directExchange");
+    }
 
-//    @Bean
-//    DirectExchange directExchange() {
-//        return new DirectExchange("directExchange");
-//    }
-//
-//    @Bean
-//    TopicExchange topicExchange() {
-//        return new TopicExchange("topicExchange");
-//    }
+    @Bean
+    TopicExchange topicExchange() {
+        return new TopicExchange("topicExchange");
+    }
 
     @Bean
     FanoutExchange fanoutExchange() {
         return new FanoutExchange("fanoutExchange");
     }
 
-//    @Bean
-//    Binding bindingDirect(Queue queue, DirectExchange exchange) {
-//        return BindingBuilder.bind(queue).to(exchange).with("bindingDirect");
-//    }
-//
-//    @Bean
-//    Binding bindingTopic(Queue queue, TopicExchange exchange) {
-//        return BindingBuilder.bind(queue).to(exchange).with("bindingTopic");
-//    }
+    @Bean
+    Binding bindingDirect() {
+        return BindingBuilder.bind(helloQueue()).to(directExchange()).with("bindingDirect");
+    }
+
+    @Bean
+    Binding bindingTopic() {
+        return BindingBuilder.bind(testQueue()).to(topicExchange()).with("bindingTopic");
+    }
 
     @Bean
     Binding bindingFanout() {

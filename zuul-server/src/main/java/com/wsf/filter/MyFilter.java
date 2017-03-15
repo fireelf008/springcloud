@@ -54,17 +54,17 @@ public class MyFilter extends ZuulFilter {
      */
     @Override
     public Object run() {
-        RequestContext ctx = RequestContext.getCurrentContext();
-        HttpServletRequest request = ctx.getRequest();
-        logger.info(String.format("%s request to %s", request.getMethod(), request.getRequestURL().toString()));
-        Object a = request.getParameter("a");
-        Object b = request.getParameter("b");
-        if(null == a || null == b) {
-            logger.warn("parameter error");
-            ctx.setSendZuulResponse(false);
-            ctx.setResponseStatusCode(500);
-            return null;
-        }
+//        RequestContext ctx = RequestContext.getCurrentContext();
+//        HttpServletRequest request = ctx.getRequest();
+//        logger.info(String.format("%s request to %s", request.getMethod(), request.getRequestURL().toString()));
+//        Object a = request.getParameter("a");
+//        Object b = request.getParameter("b");
+//        if(null == a || null == b) {
+//            logger.warn("parameter error");
+//            ctx.setSendZuulResponse(false);
+//            ctx.setResponseStatusCode(500);
+//            return null;
+//        }
         logger.info("parameter ok");
         return null;
     }

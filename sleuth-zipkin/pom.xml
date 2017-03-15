@@ -8,9 +8,9 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>eureka-server</artifactId>
-    <packaging>jar</packaging>
-    <name>eureka-server Maven Webapp</name>
+    <artifactId>sleuth-zipkin</artifactId>
+    <packaging>war</packaging>
+    <name>sleuth-zipkin Maven Webapp</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -42,7 +42,7 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka-server</artifactId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
         </dependency>
 
         <dependency>
@@ -57,7 +57,7 @@
     </dependencies>
 
     <build>
-        <finalName>eureka-server</finalName>
+        <finalName>sleuth-zipkin</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -72,7 +72,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>1.4.3.RELEASE</version>
             </plugin>
         </plugins>
     </build>

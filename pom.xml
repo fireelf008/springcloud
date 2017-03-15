@@ -23,6 +23,8 @@
         <module>zuul-server</module>
         <module>amqp-producer</module>
         <module>amqp-consumer</module>
+        <module>zipkin-server</module>
+        <module>sleuth-zipkin</module>
     </modules>
 
     <build>

@@ -25,6 +25,7 @@
         <module>amqp-consumer</module>
         <module>sleuth-zipkin</module>
         <module>zookeeper-server</module>
+        <module>admin-server</module>
     </modules>
 
     <build>

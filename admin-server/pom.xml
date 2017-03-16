@@ -8,15 +8,16 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>zookeeper-server</artifactId>
+    <artifactId>admin-server</artifactId>
     <packaging>war</packaging>
-    <name>zookeeper-server Maven Webapp</name>
+    <name>admin-server Maven Webapp</name>
     <url>http://maven.apache.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
         <jdk.version>1.7</jdk.version>
+        <spring-boot-admin.version>1.3.4</spring-boot-admin.version>
     </properties>
 
     <dependencyManagement>
@@ -47,12 +48,24 @@
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-zookeeper-all</artifactId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-server</artifactId>
+            <version>${spring-boot-admin.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-server-ui</artifactId>
+            <version>${spring-boot-admin.version}</version>
         </dependency>
     </dependencies>
 
     <build>
-        <finalName>zookeeper-server</finalName>
+        <finalName>admin-server</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -67,6 +80,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>1.4.3.RELEASE</version>
             </plugin>
         </plugins>
     </build>

@@ -26,6 +26,8 @@
         <module>sleuth-zipkin</module>
         <module>zookeeper-server</module>
         <module>admin-server</module>
+        <module>stream-producer</module>
+        <module>stream-consumer</module>
     </modules>
 
     <build>

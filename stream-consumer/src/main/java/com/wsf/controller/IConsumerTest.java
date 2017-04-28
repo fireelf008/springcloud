@@ -11,8 +11,8 @@ import org.springframework.messaging.SubscribableChannel;
 public interface IConsumerTest {
 
     @Input
-    SubscribableChannel testInput();
+    SubscribableChannel consumerInput();
 
-    @Output
-    MessageChannel testOutput();
+//    @Output
+//    MessageChannel consumerOutput();
 }

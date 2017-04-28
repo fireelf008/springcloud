@@ -10,9 +10,9 @@ import org.springframework.messaging.SubscribableChannel;
  */
 public interface IProducerTest {
 
-    @Input
-    SubscribableChannel testInput();
+//    @Input
+//    SubscribableChannel producerInput();
 
     @Output
-    MessageChannel testOutput();
+    MessageChannel producerOutput();
 }

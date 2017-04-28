@@ -19,7 +19,7 @@ public class ConsumerController {
     @Autowired
     private IConsumerTest consumerTest;
 
-    @StreamListener("testInput")
+    @StreamListener("consumerInput")
     public void input(Object payload) {
         System.out.println("consumer:" + payload);
     }

@@ -21,7 +21,7 @@ public class ProducerController {
     @RequestMapping(value = "output")
     @ResponseBody
     public String output() {
-        this.producerTest.testOutput().send(MessageBuilder.withPayload("Hello World").build());
+        this.producerTest.producerOutput().send(MessageBuilder.withPayload("Hello World").build());
         System.out.println("producer:ok");
         return "ok";
     }

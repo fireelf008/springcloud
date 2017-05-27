@@ -27,7 +27,7 @@ public class ConsumerController {
             int i = 1/0;
         }
         return null;
-//        return restTemplate.getForEntity("http://zuul-server/eureka-producer/add?a=10&b=20", String.class).getBody();
+//        return restTemplate.getForEntity("http://zuul-server/ep/add?a=10&b=20", String.class).getBody();
     }
 
     /**

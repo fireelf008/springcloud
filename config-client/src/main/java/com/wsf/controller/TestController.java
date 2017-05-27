@@ -14,23 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/tc")
 public class TestController {
 
-//    @Value("${dev.test}")
-//    private String devTest;
+    @Value("${my.test}")
+    private String test;
 
-    @Value("${uat.test}")
-    private String uatTest;
-
-//    @RequestMapping(value = "/dev-test")
-//    @ResponseBody
-//    public String getDevTest()
-//    {
-//        return devTest;
-//    }
-
-    @RequestMapping(value = "/uat-test")
+    @RequestMapping(value = "/test")
     @ResponseBody
     public String getUatTest()
     {
-        return uatTest;
+        return test;
     }
 }

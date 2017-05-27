@@ -50,6 +50,12 @@
                 <version>1.4.3.RELEASE</version>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <filtering>true</filtering>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
     </build>
 
     <profiles>
@@ -57,6 +63,7 @@
             <id>dev</id>
             <properties>
                 <env>dev</env>
+                <eureka-server>http://localhost:10001/eureka/</eureka-server>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -66,12 +73,14 @@
             <id>test</id>
             <properties>
                 <env>test</env>
+                <eureka-server>http://localhost:10001/eureka/</eureka-server>
             </properties>
         </profile>
         <profile>
             <id>prod</id>
             <properties>
                 <env>prod</env>
+                <eureka-server>http://localhost:10001/eureka/</eureka-server>
             </properties>
         </profile>
     </profiles>

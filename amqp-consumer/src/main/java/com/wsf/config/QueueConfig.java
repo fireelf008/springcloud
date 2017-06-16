@@ -1,6 +1,8 @@
 package com.wsf.config;
 
 import org.springframework.amqp.core.*;
+import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
+import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -12,7 +14,7 @@ public class QueueConfig {
 
     @Bean
     public Queue helloQueue() {
-        return new Queue("hello", false);
+        return new Queue("hello2", false);
     }
 
     @Bean
@@ -54,4 +56,16 @@ public class QueueConfig {
     Binding bindingFanout1() {
         return BindingBuilder.bind(testQueue()).to(fanoutExchange());
     }
+
+//    @Bean
+//    public ConnectionFactory connectionFactory() {
+//        CachingConnectionFactory connectionFactory = new CachingConnectionFactory();
+//        connectionFactory.setAddresses("localhost");
+//        connectionFactory.setUsername("root");
+//        connectionFactory.setPassword("root");
+//        connectionFactory.setVirtualHost("/");
+//        /** 如果要进行消息回调，则这里必须要设置为true */
+////        connectionFactory.setPublisherConfirms(publisherConfirms);
+//        return connectionFactory;
+//    }
 }

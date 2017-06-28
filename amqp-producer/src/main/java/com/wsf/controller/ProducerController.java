@@ -1,6 +1,8 @@
 package com.wsf.controller;
 
 import org.springframework.amqp.core.AmqpTemplate;
+import org.springframework.amqp.core.Message;
+import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.rabbit.support.CorrelationData;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,9 @@ public class ProducerController {
 
     @Autowired
     private RabbitTemplate rabbitTemplate;
+
+    @Autowired
+    private ConnectionFactory connectionFactory;
 
     @RequestMapping(value = "/direct")
     public void sendDirect() {
@@ -42,9 +47,20 @@ public class ProducerController {
 
     @RequestMapping(value = "/send")
     public void send(){
+
         String content = "你好，世界！";
-        System.out.println("发送消息--->" + content);
         CorrelationData correlationId = new CorrelationData(UUID.randomUUID().toString());
-        rabbitTemplate.convertAndSend("testeExchange", null, content, correlationId);
+
+        RabbitTemplate rt = new RabbitTemplate(connectionFactory);
+        rt.setConfirmCallback(new RabbitTemplate.ConfirmCallback() {
+            @Override
+            public void confirm(CorrelationData correlationData, boolean b, String s) {
+                System.out.println(correlationData.getId());
+                System.out.println(b);
+                System.out.println(s);
+            }
+        });
+        rt.convertAndSend("fanoutExchange", null, content, correlationId);
+        System.out.println("消息id" + correlationId.getId() + "--->" + content);
     }
 }

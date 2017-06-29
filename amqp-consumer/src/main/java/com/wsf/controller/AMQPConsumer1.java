@@ -61,15 +61,17 @@ public class AMQPConsumer1 {
             public void onMessage(Message message, Channel channel) throws Exception {
                 byte[] body = message.getBody();
                 System.out.println("Listener onMessage1 : " + new String(body));
-                Thread.sleep(5000);
+
                 //确认消息成功消费
-//                channel.basicNack(message.getMessageProperties().getDeliveryTag(), false);
+                System.out.println(channel.getChannelNumber());
+                Thread.sleep(5000);
+                channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
                 //确认消息消费失败，第三个参数true表示重试，false表示从队列中移除
-                if ("111".equals(new String(body))) {
-                    channel.basicNack(message.getMessageProperties().getDeliveryTag(), false, true);
-                } else {
-                    channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
-                }
+//                if ("111".equals(new String(body))) {
+//                    channel.basicNack(message.getMessageProperties().getDeliveryTag(), false, true);
+//                } else {
+//                    channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
+//                }
 //                channel.basicRecover(false);
             }
         });

@@ -9,7 +9,6 @@ import org.springframework.stereotype.Controller;
  * Created by YSD on 2017/4/27.
  */
 @Controller
-@EnableBinding(StreamChannel.class)
 public class ConsumerController {
 
     @StreamListener("createOrderInput")

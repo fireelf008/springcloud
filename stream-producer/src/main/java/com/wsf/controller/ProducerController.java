@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * Created by YSD on 2017/4/27.
  */
 @Controller
-@EnableBinding(StreamChannel.class)
 public class ProducerController {
 
     @Autowired

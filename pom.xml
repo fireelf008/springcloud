@@ -33,6 +33,8 @@
         <module>admin-server</module>
         <module>stream-producer</module>
         <module>stream-consumer</module>
+        <module>zipkin-server</module>
+        <module>data-mongodb</module>
     </modules>
 
     <dependencyManagement>

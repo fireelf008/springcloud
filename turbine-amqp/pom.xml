@@ -8,34 +8,27 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>eureka-server</artifactId>
-    <packaging>jar</packaging>
-    <name>eureka-server Maven Webapp</name>
+    <artifactId>turbine-amqp</artifactId>
+    <packaging>war</packaging>
+    <name>turbine-amqp Maven Webapp</name>
     <url>http://maven.apache.org</url>
 
     <dependencies>
         <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka-server</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-hystrix</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
+            <artifactId>spring-cloud-starter-turbine-amqp</artifactId>
         </dependency>
     </dependencies>
 
     <build>
-        <finalName>eureka-server</finalName>
+        <finalName>turbine-amqp</finalName>
     </build>
 </project>

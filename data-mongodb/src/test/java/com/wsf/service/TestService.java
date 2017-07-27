@@ -22,15 +22,15 @@ public class TestService {
 
     @Test
     public void saveTest() {
-//        MyTest mytest = new MyTest();
-//        mytest.setName("张瑶");
-//        mytest.setSex("男");
-//        mytest.setAge(30);
-//        this.testDao.save(mytest);
+        MyTest mytest = new MyTest();
+        mytest.setName("张瑶");
+        mytest.setSex("男");
+        mytest.setAge(25);
+        this.testDao.save(mytest);
 
 //        List<MyTest> list = this.testDao.findAll();
-//        List<MyTest> list = this.testDao.findByName("张瑶");
-        List<MyTest> list = this.testDao.findByAge(32);
+        List<MyTest> list = this.testDao.findByName("张瑶");
+//        List<MyTest> list = this.testDao.findByAge(32);
         System.out.println(list.size());
 
         for (MyTest m : list) {

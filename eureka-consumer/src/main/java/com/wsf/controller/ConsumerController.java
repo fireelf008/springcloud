@@ -22,12 +22,12 @@ public class ConsumerController {
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     @HystrixCommand(fallbackMethod = "addFallback", threadPoolProperties = {}, commandProperties = {@HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "10")})
     public String add() {
-//        System.out.println(i++);
-//        if (5 <= i && i <= 15) {
-//            int i = 1/0;
-//        }
-//        return null;
-        return restTemplate.getForEntity("http://zuul-server/ep/add?a=10&b=20", String.class).getBody();
+        System.out.println(i++);
+        if (5 <= i && i <= 15) {
+            int i = 1/0;
+        }
+        return null;
+//        return restTemplate.getForEntity("http://zuul-server/ep/add?a=10&b=20", String.class).getBody();
     }
 
     /**

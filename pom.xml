@@ -95,7 +95,7 @@
             <id>dev</id>
             <properties>
                 <env>dev</env>
-                <eureka-server>http://localhost:10001/eureka/,http://localhost:10002/eureka/,http://localhost:10003/eureka/</eureka-server>
+                <eureka-server>http://localhost:10001/eureka/</eureka-server>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>

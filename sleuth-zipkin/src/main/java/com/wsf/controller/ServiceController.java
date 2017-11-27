@@ -30,6 +30,6 @@ public class ServiceController {
     @ResponseBody
     public String sayHello() {
         logger.info("------say hello----");
-        return "Hello World";
+        return this.restTemplate.getForObject("http://zuul-server/ep/add?a=10&b=20", String.class);
     }
 }

@@ -1,5 +1,7 @@
 package com.wsf.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,5 +28,19 @@ public class ProducerController {
         Integer r = a + b;
         logger.info("/add, host:" + instance.getHost() + ", service_id:" + instance.getServiceId() + ", result:" + r);
         return r;
+    }
+
+    @RequestMapping(value = "/hello" ,method = RequestMethod.GET)
+    @HystrixCommand(fallbackMethod = "addFallback")
+    public String hello() {
+        return "hello world!";
+    }
+
+    /**
+     * 熔断器，通过spring cloud hystrix
+     * @return
+     */
+    public String addFallback() {
+        return "error";
     }
 }

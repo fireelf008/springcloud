@@ -17,17 +17,17 @@ import org.springframework.stereotype.Service;
 @Service
 public class AMQPConsumer1 {
 
-//    @RabbitListener(queues = "hello2")
-//    @RabbitHandler
-//    public void process(String msg) {
-//        System.out.println("Receiver1 : " + msg);
-//    }
-//
-//    @RabbitListener(queues = "test")
-//    @RabbitHandler
-//    public void process2(String msg) {
-//        System.out.println("Receiver2 : " + msg);
-//    }
+    @RabbitListener(queues = "hello2")
+    @RabbitHandler
+    public void process(String msg) {
+        System.out.println("Receiver1 : " + msg);
+    }
+
+    @RabbitListener(queues = "test")
+    @RabbitHandler
+    public void process2(String msg) {
+        System.out.println("Receiver2 : " + msg);
+    }
 
     @Autowired
     private ConnectionFactory connectionFactory;
@@ -64,7 +64,7 @@ public class AMQPConsumer1 {
 
                 //确认消息成功消费
                 System.out.println(channel.getChannelNumber());
-                Thread.sleep(5000);
+//                Thread.sleep(5000);
                 channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
                 //确认消息消费失败，第三个参数true表示重试，false表示从队列中移除
 //                if ("111".equals(new String(body))) {

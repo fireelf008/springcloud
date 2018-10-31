@@ -17,6 +17,9 @@ public class ConsumerController {
     @Autowired
     private RestTemplate restTemplate;
 
+    @Autowired
+    private ProducerRemote producerRemote;
+
     private static int i = 0;
 
     @RequestMapping(value = "/add", method = RequestMethod.GET)
@@ -27,7 +30,11 @@ public class ConsumerController {
 //            int i = 1/0;
 //        }
 //        return null;
-        return restTemplate.getForEntity("http://zuul-server/ep/add?a=10&b=20", String.class).getBody();
+//        return restTemplate.getForEntity("http://zuul-server/ep/add?a=10&b=20", String.class).getBody();
+
+        String res = producerRemote.remote_add(10, 20);
+        System.out.println(res);
+        return res;
     }
 
     /**

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by YSD on 2017/1/24.
  */
 @RestController
+@RequestMapping("/producer")
 public class ProducerController {
 
     private static final Logger logger = LoggerFactory.getLogger(ProducerController.class);
@@ -20,11 +21,12 @@ public class ProducerController {
     @Autowired
     private DiscoveryClient client;
 
-    @RequestMapping(value = "/add" ,method = RequestMethod.GET)
-    public Integer add(Integer a, Integer b) {
+    @RequestMapping(value = "/add")
+    public String add(Integer a, Integer b) {
         ServiceInstance instance = client.getLocalServiceInstance();
         Integer r = a + b;
         logger.info("/add, host:" + instance.getHost() + ", service_id:" + instance.getServiceId() + ", result:" + r);
-        return r;
+        System.out.println(r);
+        return "计算结果为：a + b = " + r;
     }
 }

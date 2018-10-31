@@ -13,8 +13,8 @@
         <argLine>-Dfile.encoding=UTF-8</argLine>
         <maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
         <jdk.version>1.7</jdk.version>
-        <spring-boot.version>1.4.3.RELEASE</spring-boot.version>
-        <spring-cloud.version>Camden.SR7</spring-cloud.version>
+        <spring-boot.version>1.5.8.RELEASE</spring-boot.version>
+        <spring-cloud.version>Dalston.SR4</spring-cloud.version>
         <spring-boot-admin.version>1.4.3</spring-boot-admin.version>
         <curator-framework.version>2.8.0</curator-framework.version>
     </properties>
@@ -33,6 +33,10 @@
         <module>admin-server</module>
         <module>stream-producer</module>
         <module>stream-consumer</module>
+        <module>zipkin-server</module>
+        <module>data-mongodb</module>
+        <module>turbine-amqp</module>
+        <module>zookeeper-client</module>
     </modules>
 
     <dependencyManagement>
@@ -101,14 +105,14 @@
             <id>test</id>
             <properties>
                 <env>test</env>
-                <eureka-server>http://localhost:10001/eureka/</eureka-server>
+                <eureka-server>http://localhost:10001/eureka/,http://localhost:10002/eureka/,http://localhost:10003/eureka/</eureka-server>
             </properties>
         </profile>
         <profile>
             <id>prod</id>
             <properties>
                 <env>prod</env>
-                <eureka-server>http://localhost:10001/eureka/</eureka-server>
+                <eureka-server>http://localhost:10001/eureka/,http://localhost:10002/eureka/,http://localhost:10003/eureka/</eureka-server>
             </properties>
         </profile>
     </profiles>
